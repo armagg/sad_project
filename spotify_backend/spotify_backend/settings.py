@@ -42,7 +42,11 @@ INSTALLED_APPS = [
     'rest_framework',
 
     #our apps:
-    'accounts'
+    'accounts',
+    'financial',
+    'following',
+    'music',
+    'playlist',
 ]
 
 
