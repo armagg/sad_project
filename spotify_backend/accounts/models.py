@@ -26,3 +26,6 @@ class Singer(models.Model):
     biography = models.TextField()
 
 
+class Provider(models.Model):
+    user = models.ForeignKey(User, on_delete=CASCADE)
+    balance = models.IntegerField()
