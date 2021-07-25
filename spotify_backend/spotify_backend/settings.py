@@ -43,7 +43,6 @@ INSTALLED_APPS = [
 
     #our apps:
     'accounts',
-    'financial',
     'following',
     'music',
     'playlists',
