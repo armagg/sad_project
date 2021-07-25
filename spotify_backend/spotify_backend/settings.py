@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'financial',
     'following',
     'music',
-    'playlist',
+    'playlists',
 ]
 
 
