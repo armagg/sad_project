@@ -1,6 +1,6 @@
 from django.db.models.deletion import CASCADE
 from django.db.models.fields.related import ForeignKey
-from spotify_backend.accounts.models import Listener, Singer
+from accounts.models import Listener, Singer
 from django.db import models
 
 class FollowSinger(models.Model):
