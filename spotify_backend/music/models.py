@@ -12,7 +12,7 @@ MUSIC_TYPE = [
     (MUSIC, 'music')
 ]
 class Music(models.Model):
-    singer = models.ManyToManyField(Singer)
+    singers = models.ManyToManyField(Singer)
     name = models.CharField(max_length=30)
     file_id = models.IntegerField()
     provider = models.ForeignKey(Provider, on_delete=DO_NOTHING)
