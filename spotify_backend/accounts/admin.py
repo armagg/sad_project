@@ -1,3 +1,6 @@
-from django.contrib import admin
+from accounts.models import Listener, Person, Singer
+from django.contrib.admin import site
 
-# Register your models here.
+site.register(Person)
+site.register(Listener)
+site.register(Singer)

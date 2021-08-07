@@ -11,13 +11,19 @@ ACC_TYPES = [
     (VIP, 'vip')
 ]
 
-class User(auth.User):
-    pass
+class Person(models.Model):
+    user = models.OneToOneField(auth.User, on_delete=CASCADE)
+    
+    def __str__(self) -> str:
+        return f'{self.user.first_name} {self.user.last_name}'
 
 
 class Listener(models.Model):
-    user = models.ForeignKey(User, on_delete=CASCADE)
+    user = models.ForeignKey(Person, on_delete=CASCADE)
     account_type = models.CharField(choices=ACC_TYPES, max_length=5)
+
+    def __str__(self) -> str:
+        return str(self.user)
 
 
 class Singer(models.Model):
@@ -25,7 +31,14 @@ class Singer(models.Model):
     description = models.TextField('descriptions')
     biography = models.TextField()
 
+    def __str__(self) -> str:
+        return self.name
+
 
 class Provider(models.Model):
-    user = models.ForeignKey(User, on_delete=CASCADE)
+    user = models.ForeignKey(Person, on_delete=CASCADE)
     balance = models.IntegerField()
+    
+
+    def __str__(self) -> str:
+        return str(self.user)

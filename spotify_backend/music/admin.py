@@ -1,3 +1,6 @@
-from django.contrib import admin
+from music.models import Genre, Music, MusicGenre
+from django.contrib.admin import site
 
-# Register your models here.
+site.register(Music)
+site.register(MusicGenre)
+site.register(Genre)
